@@ -55,6 +55,16 @@ const Item = ({user}) => (
 	</div>
 )
 
+const Header = () => {
+	return (
+		<div>
+			<h2>Our software users</h2>
+			<p>select desired list by clicking corresponding button</p>
+		</div>
+	)
+		
+}
+
 class ListItems extends React.Component {
 	state = {
 		select: "all"  		/* będzie zmieniał się za każdą zmianą przycisku (kliknięciem) */
@@ -84,12 +94,13 @@ class ListItems extends React.Component {
 
 	render() {
 		return (
-			<React.Fragment> 	{/* w metodzie (na kliknięcie) zmieniamy 'option' na konkretne wartości: */}
+			<div className="appSpace"> 	{/* w metodzie (na kliknięcie) zmieniamy 'option' na konkretne wartości: */}
+				<Header />
 				<button onClick={this.handleUsersFilter.bind(this, "all")}>all users</button>
 				<button onClick={this.handleUsersFilter.bind(this, "female")}>women</button>
 				<button onClick={this.handleUsersFilter.bind(this, "male")}>men</button>
 				{ this.usersList() }
-			</React.Fragment> 
+			</div> 
 		)
 	}
 }
