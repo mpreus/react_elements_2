@@ -3,37 +3,55 @@ const data = { /* obiekt z jednym kluczem z wartością w postaci tablicy z obie
 		{
 			id: 1,
 			age: 29,
-			name: "Arek",
+			name: "Mark",
 			sex: "male" 
 		},
 		{
 			id: 2,
 			age: 49,
-			name: "Marta",
+			name: "Martha",
 			sex: "female" 
 		},
 		{
 			id: 3,
 			age: 19,
-			name: "Stasia",
+			name: "Suzan",
 			sex: "female" 
 		},
 		{
 			id: 4,
 			age: 22,
-			name: "Darek",
+			name: "Derek",
 			sex: "male" 
+		},
+		{
+			id: 5,
+			age: 21,
+			name: "John",
+			sex: "male" 
+		},
+		{
+			id: 6,
+			age: 27,
+			name: "Ana",
+			sex: "female" 
+		},
+		{
+			id: 7,
+			age: 31,
+			name: "Barb",
+			sex: "female" 
 		}
 	]
 }
 
 /* komponent do przekazania z propsami o nazwie jak w przekazanym komponencie: */
 const Item = ({user}) => (
-	<div className="userInfo"> 						{/* ponieważ propsy nazywają się 'content': */}
+	<div className="userInfo"> 						
 		<h3>{user.name}</h3>
-		<p>informacje o użytkowniku:</p>
-		<p>wiek użytkownika: <strong>{user.age}</strong> lat</p>
-		<p>płeć użytkownika: {user.sex}</p>
+		<p>user data:</p>
+		<p>user's age: <strong>{user.age}</strong></p>
+		<p>user's sex: {user.sex}</p>
 	</div>
 )
 
@@ -62,15 +80,14 @@ class ListItems extends React.Component {
 			users = users.filter(user => user.sex === "male");
 			return users.map( user => <Item  user={user} key={user.id}/> )
 		} /* jeśli jest w casach 'return', to nie potrzeba 'break' */
-
 	}
 
 	render() {
 		return (
 			<React.Fragment> 	{/* w metodzie (na kliknięcie) zmieniamy 'option' na konkretne wartości: */}
-				<button onClick={this.handleUsersFilter.bind(this, "all")}>wszyscy</button>
-				<button onClick={this.handleUsersFilter.bind(this, "female")}>kobiety</button>
-				<button onClick={this.handleUsersFilter.bind(this, "male")}>mężczyźni</button>
+				<button onClick={this.handleUsersFilter.bind(this, "all")}>all users</button>
+				<button onClick={this.handleUsersFilter.bind(this, "female")}>women</button>
+				<button onClick={this.handleUsersFilter.bind(this, "male")}>men</button>
 				{ this.usersList() }
 			</React.Fragment> 
 		)
@@ -81,4 +98,3 @@ ReactDOM.render( /* przekazujemy dane w postaci 'data' (obiekt zdefiniowany na p
 	<ListItems data={data}/>,
 	document.getElementById("root")
 )
-/* how to filter data */
