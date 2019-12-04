@@ -79,7 +79,7 @@ class ListItems extends React.Component {
 	usersList = () => {
 		let users = this.props.data.users 		/* referencja do tablicy z danymi 'data' */
 		
-		/* metoda 'switch' sprawdzi jaki jest stan 'select' i zmieni renderowany zestaw danych: */
+		/* metoda 'switch' sprawdzi jaki jest stan 'option' i zmieni renderowany zestaw danych: */
 		switch(this.state.select) {
 			case "all":
 			return users.map( user => <Item  user={user} key={user.id}/> )
