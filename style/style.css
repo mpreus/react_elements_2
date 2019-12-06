@@ -12,7 +12,9 @@ body {
 	border: 1px solid navy;
 	border-radius: 6px;
 	box-shadow: 3px 3px 3px #001a4d;
+	padding-bottom: 20px;
 	margin: 0 auto;
+	margin-bottom: 30px;
 }
 
 h2 {
@@ -24,12 +26,14 @@ h3 {
 	margin-bottom: -5px;
 	margin-left: 20px;
 	margin-top: 30px;
+	text-align: center;
 }
 
 p {
 	margin-bottom: 0;
 	margin-left: 20px;
 	margin-top: 10px;
+	text-align: center;
 }
 
 button {
@@ -47,4 +51,10 @@ button:hover {
 	background-color: #001a4d;
 	box-shadow: 3px 3px 3px #888;
 	color: #eee;
+}
+
+footer {
+	color: darkred;
+	font-weight: bold;
+	margin: 30px 20px 10px;
 }

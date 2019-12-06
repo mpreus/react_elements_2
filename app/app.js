@@ -4,42 +4,49 @@ const data = { /* obiekt z jednym kluczem z wartością w postaci tablicy z obie
 			id: 1,
 			age: 29,
 			name: "Mark",
+			occupation: "UI designer",
 			sex: "male" 
 		},
 		{
 			id: 2,
 			age: 49,
 			name: "Martha",
+			occupation: "UX specialist",
 			sex: "female" 
 		},
 		{
 			id: 3,
 			age: 19,
 			name: "Suzan",
+			occupation: "Frontend developer",
 			sex: "female" 
 		},
 		{
 			id: 4,
 			age: 22,
 			name: "Derek",
+			occupation: "JavaScript Developer",
 			sex: "male" 
 		},
 		{
 			id: 5,
 			age: 21,
 			name: "John",
+			occupation: "Backend developer",
 			sex: "male" 
 		},
 		{
 			id: 6,
 			age: 27,
 			name: "Ana",
+			occupation: "Python developer",
 			sex: "female" 
 		},
 		{
 			id: 7,
 			age: 31,
 			name: "Barb",
+			occupation: "QA specialist",
 			sex: "female" 
 		}
 	]
@@ -51,6 +58,7 @@ const Item = ({user}) => (
 		<h3>{user.name}</h3>
 		<p>user data:</p>
 		<p>user's age: <strong>{user.age}</strong></p>
+		<p>user's occupation: {user.occupation}</p>
 		<p>user's sex: {user.sex}</p>
 	</div>
 )
@@ -61,8 +69,15 @@ const Header = () => {
 			<h2>Our software users</h2>
 			<p>select desired list by clicking corresponding button</p>
 		</div>
-	)
-		
+	)	
+}
+
+const Footer = () => {
+	return (
+		<footer>
+			<p>Note that number of our software users grows rapidly,<br/>so make sure you join this community</p>
+		</footer>
+	)	
 }
 
 class ListItems extends React.Component {
@@ -100,6 +115,7 @@ class ListItems extends React.Component {
 				<button onClick={this.handleUsersFilter.bind(this, "female")}>women</button>
 				<button onClick={this.handleUsersFilter.bind(this, "male")}>men</button>
 				{ this.usersList() }
+				<Footer />
 			</div> 
 		)
 	}
